@@ -6,6 +6,6 @@ public class Order{
 	 * @param item it is the name of the item
 	 */
 	public void orders(String item) {
-		System.out.println(item+" ordered");
+		System.out.println(item+" ordered\n");
 	}
 }

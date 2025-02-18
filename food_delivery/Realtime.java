@@ -7,7 +7,7 @@ class Realtime implements DeliveryTracker{
 	 * @return startdelivery method returns the print statement
 	 */
 	public void startDelivery() {
-		System.out.println("Realtime class Delivery Started");
+		System.out.println("\nRealtime class Delivery Started");
 	}
 	/**
 	 * @return trackprogress method returns the print statement
@@ -19,6 +19,6 @@ class Realtime implements DeliveryTracker{
 	 * @return completedelivery method returns the print statement
 	 */
 	public void completeDelivery() {
-		System.out.println("Realtime class Delivery Completed");
+		System.out.println("Realtime class Delivery Completed\n");
 	}
 }

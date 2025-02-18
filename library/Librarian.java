@@ -9,7 +9,7 @@ public class Librarian implements LibraryInterface {
      * @return booksearch This method doesn't return any value; it simply prints a search message.
      */
     public void booksearch(String category) {
-        System.out.println("Librarian is searching books in category: " + category);
+        System.out.println("Librarian is searching books in category: " + category+"\n");
     }
 
     /**
@@ -20,7 +20,7 @@ public class Librarian implements LibraryInterface {
      * @return borrowbook This method doesn't return any value; it simply prints a borrow message.
      */
     public void borrowbook(int bookId, int memberId) {
-        System.out.println("Librarian allows Member " + memberId + " to borrow book with ID: " + bookId);
+        System.out.println("Librarian allows Member " + memberId + " to borrow book with ID: " + bookId+"\n");
     }
 
     /**
@@ -31,7 +31,7 @@ public class Librarian implements LibraryInterface {
      * @return returnbook This method doesn't return any value; it simply prints a return message.
      */
     public void returnbook(int bookId, int memberId) {
-        System.out.println("Librarian allows Member " + memberId + " to return book with ID: " + bookId);
+        System.out.println("Librarian allows Member " + memberId + " to return book with ID: " + bookId+"\n");
     }
 
     /**
@@ -41,7 +41,7 @@ public class Librarian implements LibraryInterface {
      * @return addbook This method doesn't return any value; it simply prints an add book message.
      */
     public void addbook(Book book) {
-        System.out.println("Librarian is adding new book: " + book);
+        System.out.println("Librarian is adding new book: " + book+"\n");
     }
 
     /**
@@ -52,7 +52,7 @@ public class Librarian implements LibraryInterface {
      * @return updateBook This method doesn't return any value; it simply prints an update message.
      */
     public void updateBook(int bookId, Book updatedBook) {
-        System.out.println("Librarian is updating book ID " + bookId + " with details: " + updatedBook);
+        System.out.println("Librarian is updating book ID " + bookId + " with details: " + updatedBook+"\n");
     }
 
     /**
@@ -62,6 +62,6 @@ public class Librarian implements LibraryInterface {
      * @return deleteBook This method doesn't return any value; it simply prints a delete message.
      */
     public void deleteBook(int bookId) {
-        System.out.println("Librarian is deleting book with ID: " + bookId);
+        System.out.println("Librarian is deleting book with ID: " + bookId+"\n");
     }
 }

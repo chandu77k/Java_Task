@@ -65,7 +65,7 @@ public class LibraryManagement {
      * @return showCatalog This method does not return any value; it prints the catalog to the console.
      */
     public void showCatalog() {
-        System.out.println("Library Catalog:");  // Prints the header for the catalog
+        System.out.println("\nLibrary Catalog:");  // Prints the header for the catalog
         for (int i = 0; i < bookCount; i++) {
             System.out.println(booksCatalog[i]);  // Prints each book in the catalog
         }

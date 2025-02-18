@@ -7,7 +7,7 @@ class Menu extends BasicFood{
 	 * @return list method performs the operation in pizza method and burger method
 	 */
 	public void lists() {
-		System.out.println("Menu : ");
+		System.out.println("\nMenu : ");
 		pizza();
 		burger();
 	}

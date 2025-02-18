@@ -9,7 +9,7 @@ public class Member implements LibraryInterface {
      * @return booksearch This method does not return any value, it just prints a search message.
      */
     public void booksearch(String category) {
-        System.out.println("Member is searching books in category: " + category);
+        System.out.println("Member is searching books in category: " + category+"\n");
     }
 
     /**
@@ -20,7 +20,7 @@ public class Member implements LibraryInterface {
      * @return borrowbook This method does not return any value, it just prints a borrow message.
      */
     public void borrowbook(int bookId, int memberId) {
-        System.out.println("Member " + memberId + " borrowed book with ID: " + bookId);
+        System.out.println("Member " + memberId + " borrowed book with ID: " + bookId+"\n");
     }
 
     /**
@@ -31,7 +31,7 @@ public class Member implements LibraryInterface {
      * @return returnbook This method does not return any value, it just prints a return message.
      */
     public void returnbook(int bookId, int memberId) {
-        System.out.println("Member " + memberId + " returned book with ID: " + bookId);
+        System.out.println("Member " + memberId + " returned book with ID: " + bookId+"\n");
     }
 
     /**
@@ -41,7 +41,7 @@ public class Member implements LibraryInterface {
      * @return addbook This method does not return any value, it simply prints an error message.
      */
     public void addbook(Book book) {
-        System.out.println("Members cannot add books to the catalog.");
+        System.out.println("Members cannot add books to the catalog."+"\n");
     }
 
     /**
@@ -52,7 +52,7 @@ public class Member implements LibraryInterface {
      * @return updateBook This method does not return any value, it simply prints an error message.
      */
     public void updateBook(int bookId, Book updatedBook) {
-        System.out.println("Members cannot update books in the catalog.");
+        System.out.println("Members cannot update books in the catalog."+"\n");
     }
 
     /**
@@ -62,6 +62,6 @@ public class Member implements LibraryInterface {
      * @return deleteBook This method does not return any value, it simply prints an error message.
      */
     public void deleteBook(int bookId) {
-        System.out.println("Members cannot delete books from the catalog.");
+        System.out.println("Members cannot delete books from the catalog."+"\n");
     }
 }

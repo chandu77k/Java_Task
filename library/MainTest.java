@@ -6,13 +6,13 @@ public class MainTest {
         Scanner scanner = new Scanner(System.in);
 
         // Ask the user for login type
-        System.out.println("Login Type : ");
+        System.out.println("Login Type (member or librarian) : ");
         String type = scanner.next();
 
         // Create a LibraryManagement object and present initial books
         LibraryManagement librarymanagement = new LibraryManagement();
         librarymanagement.presentbooks();
-        librarymanagement.addBook(new Book(3, "History Book 1", Categories.history));
+        librarymanagement.addBook(new Book(3, "History Book 1", Categories.history+"\n"));
 
         // Execute logic based on the login type
         if (type.contentEquals("member")) {

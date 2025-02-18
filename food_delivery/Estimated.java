@@ -19,6 +19,6 @@ class Estimated implements DeliveryTracker{
 	 * @return completeDelivery method executes the print statement in that method
 	 */
 	public void completeDelivery() {
-		System.out.println("Estimated class Complete Delivery");
+		System.out.println("Estimated class Complete Delivery\n");
 	}
 }
