@@ -8,7 +8,7 @@ public class MainTest {
         // Create a list of subjects for person 1
         List<String> subject1 = new ArrayList<>();
         subject1.add("Java");
-        subject1.add("Python");
+        subject1.add("Python"); //[java,python]
         
         // Create a Person object with name, age, city, and subjects
         Person personobject1 = new Person("Chandu", 22, "Hyderabad", subject1);
@@ -78,6 +78,7 @@ public class MainTest {
         System.out.println("List is empty or not : " + list.isEmpty()); // Checks if ArrayList is empty
         
         List<Person> listset=new ArrayList<>(set);
+        
         System.out.println("HashSet Output : ");
         for (int i=0;i<listset.size();i++) {
         	Person person=listset.get(i);
