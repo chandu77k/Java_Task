@@ -68,24 +68,37 @@ public class MainTest {
         
         // Remove the head of the queue
         queue.poll();
-        
-        // Output results
+ 
         System.out.println("ArrayList Output : ");
-        System.out.println(list); // Prints the ArrayList
-        
+        for(int i=0;i<list.size();i++) {
+        	Person person=list.get(i);
+        	System.out.println("Name : "+person.getName()+" Age : "+person.getAge()+" city : "+person.getCity()+" subject : "+person.getSubject());
+        }
+
         System.out.println("List is empty or not : " + list.isEmpty()); // Checks if ArrayList is empty
         
+        List<Person> listset=new ArrayList<>(set);
         System.out.println("HashSet Output : ");
-        System.out.println(set); // Prints the HashSet
+        for (int i=0;i<listset.size();i++) {
+        	Person person=listset.get(i);
+            System.out.println("Name: " + person.getName() + ", Age: " + person.getAge() + ", City: " + person.getCity() + ", Subjects: " + person.getSubject());
+        }
         
         System.out.println("Vector Output : ");
-        System.out.println(vector); // Prints the Vector
+        for (int i=0;i<vector.size();i++) {
+        	Person person=vector.get(i);
+            System.out.println("Name: " + person.getName() + ", Age: " + person.getAge() + ", City: " + person.getCity() + ", Subjects: " + person.getSubject());
+        }
         System.out.println("Vector contains personobject1 : " + vector.contains(personobject1)); // Check if personobject1 is in Vector
-        
+       
         System.out.println("Queue using LinkedList : ");
-        System.out.println(queue); // Prints the Queue
+        List<Person> listqueue=new ArrayList<>(set);
+        for(int i=0;i<listqueue.size();i++) {
+        	Person person=listqueue.get(i);
+            System.out.println("Name: " + person.getName() + ", Age: " + person.getAge() + ", City: " + person.getCity() + ", Subjects: " + person.getSubject());
+        }
         System.out.println("Queue Size: " + queue.size()); // Prints the size of the Queue
-        System.out.println(queue.peek()); // Prints the head of the Queue
+        System.out.println("Queue Head: " + queue.peek()); // Prints the head of the Queue
     }
 
 }
