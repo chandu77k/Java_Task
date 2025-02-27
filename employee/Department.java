@@ -1,38 +1,67 @@
 package employee;
 
 /**
- * Represents a department within an organization.
+ * Department class representing the department object.
  */
 public class Department {
-    private int deptId;
-    private String deptName;
+	private Integer deptId; // Renamed from id to deptId to match Employee and Operations class
+	private String deptName; // Renamed from name to deptName to match Employee and Operations class
 
-    /**
-     * Constructs a Department object with the specified ID and name.
-     *
-     * @param deptId   The unique identifier for the department.
-     * @param deptName The name of the department.
-     */
-    public Department(int deptId, String deptName) {
-        this.deptId = deptId;
-        this.deptName = deptName;
-    }
+	/**
+	 * Constructor to initialize a Department object.
+	 * 
+	 * @param deptId   the ID of the department
+	 * @param deptName the name of the department
+	 */
+	public Department(Integer deptId, String deptName) {
+		this.deptId = deptId;
+		this.deptName = deptName;
+	}
 
-    /**
-     * Retrieves the department ID.
-     *
-     * @return The unique identifier of the department.
-     */
-    public int getDeptId() {
-        return deptId;
-    }
+	/**
+	 * Gets the ID of the department.
+	 * 
+	 * @return the ID of the department
+	 */
+	public Integer getDeptId() {
+		return deptId;
+	}
 
-    /**
-     * Retrieves the department name.
-     *
-     * @return The name of the department.
-     */
-    public String getDeptName() {
-        return deptName;
-    }
+	/**
+	 * Sets the ID of the department.
+	 * 
+	 * @param deptId the ID to set for the department
+	 */
+	public void setDeptId(Integer deptId) {
+		this.deptId = deptId;
+	}
+
+	/**
+	 * Gets the name of the department.
+	 * 
+	 * @return the name of the department
+	 */
+	public String getDeptName() {
+		return deptName;
+	}
+
+	/**
+	 * Sets the name of the department.
+	 * 
+	 * @param deptName the name to set for the department
+	 */
+	public void setDeptName(String deptName) {
+		this.deptName = deptName;
+	}
+
+	/**
+	 * Provides a string representation of the Department object.
+	 * 
+	 * @return a string representation of the department in the format: "Name :
+	 *         {deptName} Id : {deptId}"
+	 */
+	@Override
+	public String toString() {
+		return "Name : " + deptName + " Id : " + deptId;
+	}
 }

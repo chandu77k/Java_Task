@@ -1,124 +1,132 @@
 package employee;
 
-import java.util.*;
+import java.util.Date;
 
 /**
- * Represents an employee with an ID, name, department, salary, and joining date.
+ * Employee class representing the employee object
  */
 public class Employee {
-    private int empId;
-    private String empName;
-    private Department department;
-    private int salary;
-    private Date empJoinDate;
+	private Integer empId; // Changed from id to empId to be consistent with Operations class
+	private String empName; // Changed from name to empName to be consistent with Operations class
+	private Department dept;
+	private Double salary;
+	private Date empJoinDate; // Changed from joinDate to empJoinDate to be consistent with Operations class
 
-    /**
-     * Constructs an Employee object with the specified details.
-     *
-     * @param empId      The unique employee ID.
-     * @param empName    The name of the employee.
-     * @param department The department to which the employee belongs.
-     * @param salary     The salary of the employee.
-     * @param empJoinDate The joining date of the employee.
-     */
-    public Employee(int empId, String empName, Department department, int salary, Date empJoinDate) {
-        this.empId = empId;
-        this.empName = empName;
-        this.department = department;
-        this.salary = salary;
-        this.empJoinDate = empJoinDate;
-    }
+	/**
+	 * Constructor to initialize an Employee object
+	 * 
+	 * @param empId       the ID of the employee
+	 * @param empName     the name of the employee
+	 * @param dept        the department of the employee
+	 * @param salary      the salary of the employee
+	 * @param empJoinDate the join date of the employee
+	 */
+	public Employee(Integer empId, String empName, Department dept, Double salary, Date empJoinDate) {
+		this.empId = empId;
+		this.empName = empName;
+		this.dept = dept;
+		this.salary = salary;
+		this.empJoinDate = empJoinDate;
+	}
 
-    /**
-     * Gets the employee ID.
-     *
-     * @return The employee ID.
-     */
-    public int getEmpId() {
-        return empId;
-    }
+	/**
+	 * Gets the ID of the employee
+	 * 
+	 * @return the ID of the employee
+	 */
+	public Integer getEmpId() {
+		return empId;
+	}
 
-    /**
-     * Gets the employee's name.
-     *
-     * @return The employee name.
-     */
-    public String getEmpName() {
-        return empName;
-    }
+	/**
+	 * Sets the ID of the employee
+	 * 
+	 * @param empId the ID to set for the employee
+	 */
+	public void setEmpId(Integer empId) {
+		this.empId = empId;
+	}
 
-    /**
-     * Gets the department of the employee.
-     *
-     * @return The employee's department.
-     */
-    public Department getDepartment() {
-        return department;
-    }
+	/**
+	 * Gets the name of the employee
+	 * 
+	 * @return the name of the employee
+	 */
+	public String getEmpName() {
+		return empName;
+	}
 
-    /**
-     * Gets the employee's salary.
-     *
-     * @return The employee's salary.
-     */
-    public int getSalary() {
-        return salary;
-    }
+	/**
+	 * Sets the name of the employee
+	 * 
+	 * @param empName the name to set for the employee
+	 */
+	public void setEmpName(String empName) {
+		this.empName = empName;
+	}
 
-    /**
-     * Gets the employee's joining date.
-     *
-     * @return The employee's joining date.
-     */
-    public Date getEmpJoinDate() {
-        return empJoinDate;
-    }
+	/**
+	 * Gets the department of the employee
+	 * 
+	 * @return the department of the employee
+	 */
+	public Department getDept() {
+		return dept;
+	}
 
-    /**
-     * Updates the employee's details.
-     *
-     * @param name      The new name of the employee.
-     * @param salary    The new salary of the employee.
-     * @param joinDate  The new joining date of the employee.
-     */
-    public void updateEmployee(String name, int salary, Date joinDate) {
-        this.empName = name;
-        this.salary = salary;
-        this.empJoinDate = joinDate;
-    }
+	/**
+	 * Sets the department of the employee
+	 * 
+	 * @param dept the department to set for the employee
+	 */
+	public void setDept(Department dept) {
+		this.dept = dept;
+	}
 
-    /**
-     * Checks if two employees are equal based on their employee ID.
-     *
-     * @param obj The object to compare.
-     */
+	/**
+	 * Gets the salary of the employee
+	 * 
+	 * @return the salary of the employee
+	 */
+	public Double getSalary() {
+		return salary;
+	}
 
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null || getClass() != obj.getClass())
-            return false;
-        Employee employee = (Employee) obj;
-        return empId == employee.empId;
-    }
+	/**
+	 * Sets the salary of the employee
+	 * 
+	 * @param salary the salary to set for the employee
+	 */
+	public void setSalary(Double salary) {
+		this.salary = salary;
+	}
 
-    /**
-     * Generates a hash code for the employee based on their ID.
-     *
-     * @return The hash code of the employee.
-     */
+	/**
+	 * Gets the join date of the employee
+	 * 
+	 * @return the join date of the employee
+	 */
+	public Date getEmpJoinDate() {
+		return empJoinDate;
+	}
 
-    public int hashCode() {
-        return Objects.hash(empId);
-    }
+	/**
+	 * Sets the join date of the employee
+	 * 
+	 * @param empJoinDate the join date to set for the employee
+	 */
+	public void setEmpJoinDate(Date empJoinDate) {
+		this.empJoinDate = empJoinDate;
+	}
 
-    /**
-     * Returns a string representation of the employee details.
-     *
-     * @return A formatted string containing employee details.
-     */
-
-    public String toString() {
-        return "EmpId: " + empId + ", Name: " + empName + ", Salary: " + salary + ", Joining Date: " + empJoinDate;
-    }
+	/**
+	 * Provides a string representation of the Employee object.
+	 * 
+	 * @return a string representation of the employee in the format
+	 */
+	@Override
+	public String toString() {
+		return "Employee id=" + empId + ", name='" + empName + "', department=" + dept.getDeptName() + ", salary="
+				+ salary + ", joinDate=" + empJoinDate;
+	}
 }
