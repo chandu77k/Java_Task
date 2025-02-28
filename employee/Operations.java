@@ -81,7 +81,7 @@ public class Operations {
 			while (iterator.hasNext()) {
 				Employee emp = iterator.next();
 				if (emp.getEmpId().equals(empId)) {
-					iterator.remove();
+					iterator.remove(); 
 					System.out.println("Employee deleted: " + emp);
 					return;
 				}

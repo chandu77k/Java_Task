@@ -28,16 +28,13 @@ public class TestMain {
 
 			// Creating operations instance
 			Operations operations = new Operations();
-
+			
+			System.out.println("Adding Employees : ");
 			// Adding employees
 			operations.addEmployee(emp1);
 			operations.addEmployee(emp2);
 			operations.addEmployee(emp3);
 			operations.addEmployee(emp4);
-
-			// Sorting employees by name, salary, and join date
-			System.out.println("\nSorting Employees by Name, Salary, and Join Date:");
-			operations.sortEmployees("CSE");
 
 			// Retrieving employees from CSE department sorted by join date (reverse order)
 			System.out.println("\nGet Employees sorted by Join Date (Reverse):");
@@ -46,9 +43,6 @@ public class TestMain {
 			// Updating an employee's details
 			System.out.println("\nUpdated Employee:");
 			operations.updateEmployee(1, "CSE", "Chandu Updated", 100000.0, sdf.parse("2025-02-07"));
-
-			// Sorting employees by name, salary, and join date after update
-			operations.sortEmployees("CSE");
 
 			// Deleting an employee
 			System.out.println("\nDelete Employee:");
