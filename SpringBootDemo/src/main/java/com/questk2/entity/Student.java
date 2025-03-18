@@ -30,7 +30,7 @@ public class Student {
 		this.percentage = percentage;
 		this.branch = branch;
 	}
-
+	
 	public int getRollNo() {
 		return rollNo;
 	}

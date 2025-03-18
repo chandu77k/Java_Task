@@ -40,13 +40,15 @@ public class StudentController {
 	}
 
 	@PutMapping("/student/update/{id}")
-	public Student updateStudents(@PathVariable int id) {
-		Student student = repo.findById(id).get();
-		student.setName("kiran");
-		student.setPercentage(92);
-		repo.save(student);
-		return student;
+	public Student updateStudents(@PathVariable int id, @RequestBody Student updatedStudent) {
+	    return repo.findById(id).map(student -> {
+	        student.setName(updatedStudent.getName());
+	        student.setPercentage(updatedStudent.getPercentage());
+	        student.setBranch(updatedStudent.getBranch());
+	        return repo.save(student);
+	    }).orElseThrow(() -> new RuntimeException("Student not found with id: " + id));
 	}
+
 
 	@DeleteMapping("/student/delete/{id}")
 	public void removeStudent(@PathVariable int id) {
