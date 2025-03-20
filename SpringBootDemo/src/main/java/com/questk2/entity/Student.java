@@ -1,11 +1,18 @@
 package com.questk2.entity;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "student")
@@ -17,18 +24,19 @@ public class Student {
 	private String name;
 	@Column(name = "student_percentage")
 	private float percentage;
-	@Column(name = "student_branch")
-	private String branch;
+	@OneToMany(mappedBy = "student", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JsonManagedReference
+	private Set<StudentBranch> branch;
 
 	public Student() {
 
 	}
 
-	public Student(String name, float percentage, String branch) {
+	public Student(String name, float percentage) {
 		super();
 		this.name = name;
 		this.percentage = percentage;
-		this.branch = branch;
+		
 	}
 	
 	public int getRollNo() {
@@ -55,12 +63,15 @@ public class Student {
 		this.percentage = percentage;
 	}
 
-	public String getBranch() {
+	public Set<StudentBranch> getBranch(){
 		return branch;
 	}
-
-	public void setBranch(String branch) {
+	
+	public void setBranch(Set<StudentBranch> branch) {
 		this.branch = branch;
+		for(StudentBranch branches : branch) {
+			branches.setStudent(this);
+		}
 	}
 
 	@Override
@@ -69,4 +80,5 @@ public class Student {
 				+ "]";
 	}
 
+	
 }

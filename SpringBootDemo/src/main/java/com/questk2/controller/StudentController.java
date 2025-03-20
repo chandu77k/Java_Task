@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.questk2.entity.Student;
+import com.questk2.entity.StudentBranch;
 import com.questk2.repository.StudentRepository;
 
 @RestController
@@ -32,11 +33,12 @@ public class StudentController {
 		Student student = repo.findById(id).get();
 		return student;
 	}
-
+	
 	@PostMapping("/student/add")
 	@ResponseStatus(code = HttpStatus.CREATED)
-	public void createStudent(@RequestBody Student student) {
+	public void createStudent(@RequestBody Student student,StudentBranch studentBranch) {
 		repo.save(student);
+		repo.save(studentBranch);
 	}
 
 	@PutMapping("/student/update/{id}")
@@ -44,15 +46,14 @@ public class StudentController {
 	    return repo.findById(id).map(student -> {
 	        student.setName(updatedStudent.getName());
 	        student.setPercentage(updatedStudent.getPercentage());
-	        student.setBranch(updatedStudent.getBranch());
 	        return repo.save(student);
 	    }).orElseThrow(() -> new RuntimeException("Student not found with id: " + id));
 	}
-
 
 	@DeleteMapping("/student/delete/{id}")
 	public void removeStudent(@PathVariable int id) {
 		Student student = repo.findById(id).get();
 		repo.delete(student);
 	}
+	
 }
